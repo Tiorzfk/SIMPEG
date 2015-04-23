@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Data_keluarga extends MY_Controller {
+class Data_riwayat_jabatan extends MY_Controller {
 
 	/*
-		***	Controller : administrator/data_keluarga.php
+		***	Controller : administrator/data_riwayat_jabatan.php
 		***	by Tioreza
 		***	http://ultraviolet.com
 	*/
@@ -13,16 +13,15 @@ class Data_keluarga extends MY_Controller {
 		$this->load->helper(array('text_helper'));
 		$controler=$this->session->userdata('status');
 		if($this->session->userdata('status')!="administrator"){
-            redirect($controler.'/data_keluarga');
+            redirect($controler.'/data_riwayat_jabatan');
         }
 	}
 
 	public function index()
 	{
-		$d['data_keluarga'] = $this->db->query("select a.id_data_keluarga,a.id_pegawai,a.nama_anggota_keluarga,a.tanggal_lahir,a.status_kawin,a.tanggal_nikah,
-			a.uraian,a.pekerjaan,b.nama_pegawai from tb_data_keluarga a left join tb_data_pegawai b on a.id_pegawai=b.id_pegawai");
+		$d['data_riwayat_jabatan'] = $this->model_adm_pegawai->tampil_riwayat_jabatan();
 		$this->load->view('administrator/header');
-		$this->load->view('administrator/master_data/keluarga/index',$d);
+		$this->load->view('administrator/master_data/riwayat_jabatan/index',$d);
 		$this->load->view('administrator/footer');
 	}
 	function simpan()

@@ -61,7 +61,7 @@
                         <ul class="nav nav-second-level">
                             <li><a href="<?php echo base_url('pegawai/data_keluarga');?>"><i class="fa fa-child"></i>Keluarga</a></li>
                             <li><a href="<?php echo base_url('pegawai/data_gaji_pokok');?>"><i class="fa fa-credit-card"></i>Gaji Pokok</a></li>
-                            <li><a href="<?php echo base_url('pegawai/riwayat_jabatan');?>"><i class="fa fa-sitemap"></i>Riwayat Jabatan</a></li>
+                            <li><a href="<?php echo base_url('pegawai/data_riwayat_jabatan');?>"><i class="fa fa-sitemap"></i>Riwayat Jabatan</a></li>
                         </ul>
                     </li>
                    
